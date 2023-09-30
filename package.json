@@ -1,5 +1,5 @@
 {
-  "name": "package-test",
+  "name": "@shummy1991/package-test",
   "type": "commonjs",
   "version": "0.1.0",
   "dependencies": {
