@@ -6,8 +6,7 @@ on:
       - main
 
 jobs:
-  publish-gpr:
-    needs: build
+  build:
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -19,7 +18,6 @@ jobs:
           node-version: 18.18.0
           registry-url: https://npm.pkg.github.com/
       - run: npm i
-      - run: npm build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
