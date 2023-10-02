@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const text: string = 4;
+  const text: Date = 4;
   console.log(text);
   return (
     <div className="App">
