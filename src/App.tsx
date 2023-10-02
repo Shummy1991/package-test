@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const text: number = 4;
+  console.log(text);
   return (
     <div className="App">
       <header className="App-header">
