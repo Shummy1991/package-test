@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const text: number = 6;
+  const text: number = 8;
   console.log(text);
   return (
     <div className="App">
