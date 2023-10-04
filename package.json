@@ -1,6 +1,6 @@
 {
   "name": "@shummy1991/package-test",
-  "type": "commonjs",
+  "type": "module",
   "version": "0.1.10",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -27,12 +27,15 @@
     "build": "npx tsc --project tsconfig.build.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:storybook/recommended"
     ]
   },
   "browserslist": {
@@ -49,5 +52,21 @@
   },
   "publishConfig": {
     "@shummy1991:registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.4.6",
+    "@storybook/addon-interactions": "^7.4.6",
+    "@storybook/addon-links": "^7.4.6",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.4.6",
+    "@storybook/preset-create-react-app": "^7.4.6",
+    "@storybook/react": "^7.4.6",
+    "@storybook/react-webpack5": "^7.4.6",
+    "@storybook/testing-library": "^0.2.2",
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "eslint-plugin-storybook": "^0.6.14",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.4.6",
+    "webpack": "^5.88.2"
   }
 }
