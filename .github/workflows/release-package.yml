@@ -18,7 +18,7 @@ jobs:
           node-version: 17.0.0
           registry-url: https://npm.pkg.github.com/
       - run: |
-          git config --global user.name "Github Action"
+          git config --global user.name "Shummy1991"
           git config --global user.email "shummy1991@gmail.com"
           npm version patch
       - run: npm ci
