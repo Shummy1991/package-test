@@ -13,6 +13,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PACKAGE_DEPLOYER_PAT }}
       - uses: actions/setup-node@v3
         with:
           node-version: 17.0.0
@@ -26,4 +28,4 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - run: git push --force
+      - run: git push
