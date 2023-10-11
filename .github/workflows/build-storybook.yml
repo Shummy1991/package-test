@@ -13,16 +13,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.PACKAGE_DEPLOYER_PAT }}
-          ref: storybook
       - uses: actions/setup-node@v3
         with:
           node-version: 17.0.0
           registry-url: https://npm.pkg.github.com/
       - run: |
-          git fetch
           git config --global user.name "Shummy1991"
           git config --global user.email "shummy1991@gmail.com"
-          git merge origin/main
+          git checkout main
+          git pull
+          git checkout storybook
+          git merge main
 
       - run: npm ci
       - run: npm run build-storybook
@@ -31,4 +32,4 @@ jobs:
       - run: |
           git add .
           git commit -m "new storybook build"
-          git push
+          git push origin storybook

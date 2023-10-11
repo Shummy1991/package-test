@@ -2,7 +2,7 @@ import React from "react";
 
 const Sample = () => {
   return (
-    <h1>Sample</h1>
+    <h1>Sample 2</h1>
   )
 };
 
