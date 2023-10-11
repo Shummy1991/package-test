@@ -22,7 +22,7 @@ jobs:
           git fetch
           git config --global user.name "Shummy1991"
           git config --global user.email "shummy1991@gmail.com"
-          git merge origin/main
+          git rebase main
 
       - run: npm ci
       - run: npm run build-storybook
