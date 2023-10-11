@@ -20,10 +20,10 @@ jobs:
       - run: |
           git config --global user.name "Shummy1991"
           git config --global user.email "shummy1991@gmail.com"
+          git checkout main
           git pull
-          git checkout origin/storybook
-          git pull
-          git merge origin/master
+          git checkout storybook
+          git merge main
 
       - run: npm ci
       - run: npm run build-storybook
@@ -32,4 +32,4 @@ jobs:
       - run: |
           git add .
           git commit -m "new storybook build"
-          git push
+          git push origin storybook
