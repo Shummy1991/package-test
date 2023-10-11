@@ -30,4 +30,4 @@ jobs:
       - run: |
           git add .
           git commit -m "new storybook build"
-          git push
+          git push --set-upstream origin storybook
