@@ -23,8 +23,8 @@ jobs:
       - run: npm ci
       - run: npm run build-storybook
       - run: rm -rf docs
-      - run: mv storybook-statics docs
+      - run: mv storybook-static docs
       - run: |
           git add .
-          git commit -m "new storybook build"
+          git commit -m "[skip ci] new storybook build"
           git push

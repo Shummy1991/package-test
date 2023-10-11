@@ -11,6 +11,7 @@ jobs:
     permissions:
       packages: write
       contents: write
+      actions: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -22,11 +23,13 @@ jobs:
       - run: |
           git config --global user.name "Shummy1991"
           git config --global user.email "shummy1991@gmail.com"
-          npm version patch
+          npm version patch -m "[skip ci] Increase version"
       - run: npm ci
       - run: npm run build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: git push
-      - run: gh workflow run 'Build Storybook' --repo '@shummy1991/package-test'
+      - run: gh workflow run 'Build Storybook' --repo 'shummy1991/package-test'
+        env:
+          GH_TOKEN: ${{ github.token }}
