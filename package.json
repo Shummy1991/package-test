@@ -1,7 +1,7 @@
 {
   "name": "@shummy1991/package-test",
   "type": "module",
-  "version": "0.1.27",
+  "version": "0.1.28",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
