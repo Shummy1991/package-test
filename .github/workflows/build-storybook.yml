@@ -22,7 +22,7 @@ jobs:
           git config --global user.email "shummy1991@gmail.com"
           git fetch
           git checkout storybook
-          git merge main
+          git merge main --allow-unrelated-histories
 
       - run: npm ci
       - run: npm run build-storybook
