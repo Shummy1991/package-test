@@ -1,9 +1,7 @@
-name: Node.js Package
+name: Build Storybook
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -22,11 +20,11 @@ jobs:
       - run: |
           git config --global user.name "Shummy1991"
           git config --global user.email "shummy1991@gmail.com"
-          npm version patch
       - run: npm ci
-      - run: npm run build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - run: git push
-      - run: gh workflow run 'Build Storybook' --repo '@shummy1991/package-test'
+      - run: npm run build-storybook
+      - run: rm -rf docs
+      - run: mv storybook-statics docs
+      - run: |
+          git add .
+          git commit -m "new storybook build"
+          git push
