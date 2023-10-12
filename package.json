@@ -1,6 +1,6 @@
 {
   "name": "@shummy1991/package-test",
-  "type": "module",
+  "type": "commonjs",
   "version": "0.1.39",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
